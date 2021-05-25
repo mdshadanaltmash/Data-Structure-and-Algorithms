@@ -14,7 +14,7 @@ class Node:
 class SingleLinkedList:
     def __init__(self):
         self.head=None
-        self.tail=None
+        #self.tail=None
         
     def print_likedList(self):
         curr=self.head 

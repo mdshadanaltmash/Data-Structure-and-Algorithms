@@ -39,4 +39,4 @@ class Queens:
              return False
      return True
 
-Queens(input("Enter the size of board or no of Queens"))
+Queens(int(input("Enter the size of board or no of Queens")))
