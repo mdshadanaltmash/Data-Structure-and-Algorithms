@@ -5,5 +5,14 @@ def bubble_sort(arr):
                 arr[j], arr[j+1] =arr[j+1], arr[j]
     print(arr)
 
+
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_index = i
+        for j in range(i+1,len(arr)):
+            if arr[min_index] > arr[j]:
+                min_index = j
+        arr[min_index], arr[i] = arr[i], arr[min_index]
+    print(arr)
 input_arr = [6,1,2,5,4,9,8,7,3]
-bubble_sort(input_arr)
+selection_sort(input_arr)
