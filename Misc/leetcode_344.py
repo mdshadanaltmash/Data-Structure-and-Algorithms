@@ -17,13 +17,23 @@ def reverseString(s) -> None:
     """
     Do not return anything, modify s in-place instead.
     """
-    leng=len(s)
-    if leng%2==0:
-        for i in range(leng//2):
+    #Solution 1
+    for i in range(len(s)//2):
             s[i],s[len(s)-i-1]=s[len(s)-i-1], s[i]
-    else:
-        for i in range((leng-1)//2):
-            s[i],s[len(s)-i-1]=s[len(s)-i-1], s[i]
+
+    # #solution 2
+
+    # leng=len(s)
+    # if leng%2==0:
+    #     for i in range(leng//2):
+    #         s[i],s[len(s)-i-1]=s[len(s)-i-1], s[i]
+    # else:
+    #     for i in range((leng-1)//2):
+    #         s[i],s[len(s)-i-1]=s[len(s)-i-1], s[i]
+
+    # #solution 3
+    # for i in range(len(s)+1//2):
+    #         s.insert(i,s.pop())
 
 
 arr = ["H","a","n","n","a","h"]
