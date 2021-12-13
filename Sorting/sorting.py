@@ -22,6 +22,23 @@ def insertion_sort(arr):
                 arr.insert(j,arr.pop(i))
     print(arr)
 
+def insertion_sort_with_binary_search(arr):
+    for i in range(1,len(arr)):
+        start = 0
+        end =i-1
+        mid = (start+end)//2
+        while start<end:
+            if arr[i]<arr[mid]:
+                end = mid
+            else:
+                start= mid+1
+            mid = (start+end)//2
+        if arr[i]>arr[mid]:
+            arr.insert(mid+1,arr.pop(i))
+        else:
+            arr.insert(mid,arr.pop(i))
+    print(arr)
 
-input_arr = [6,1,2,5,4,9,8,7,3,-1,0,10]
-insertion_sort(input_arr)
+
+input_arr = [-2,6,1,2,5,4,9,8,7,3,-1,0,10]
+insertion_sort_with_binary_search(input_arr)
