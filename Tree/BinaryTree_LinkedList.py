@@ -1,4 +1,6 @@
-from Queue.QueueUsingLinkedList import Queue
+import sys
+sys.path.append('/Users/mdshadanaltmash/Algorithms/Queue')
+from QueueUsingLinkedList import Queue
 
 class TreeNode:
     def __init__(self,data) -> None:
@@ -32,14 +34,37 @@ def postOrderTraversal(rootNode):
     postOrderTraversal(rootNode.rightChild)
     print(rootNode.data)
 
+def levelOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    else:
+        customQueue = Queue()
+        customQueue.enqueue(rootNode)
+        while not customQueue.isEmpty():
+            root = customQueue.dequeue()
+            print(root.value.data)
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
 
 
 treeNode = TreeNode('Drinks')
 hot = TreeNode('Hot')
 cold = TreeNode('Cold')
+tea = TreeNode('Tea')
+coffee = TreeNode('Coffee')
+soda = TreeNode('Soda')
+coke = TreeNode('Coke')
 treeNode.leftChild = hot
 treeNode.rightChild = cold
+hot.leftChild = tea
+hot.rightChild = coffee
+cold.leftChild = soda
+cold.rightChild = coke
 
-preOrderTraversal(treeNode)
-inOrderTraversal(treeNode)
-postOrderTraversal(treeNode)
+
+# preOrderTraversal(treeNode)
+# inOrderTraversal(treeNode)
+# postOrderTraversal(treeNode)
+levelOrderTraversal(treeNode)

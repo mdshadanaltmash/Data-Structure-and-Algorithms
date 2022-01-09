@@ -62,12 +62,12 @@ class Queue:
         self.linkedlist.head=None
         self.linkedlist.tail=None
 
-queue=Queue()
-print(queue.peek())
-print(queue.isEmpty())
-queue.enqueue(1)
-queue.enqueue(2)
-queue.enqueue(3)
-print(queue.dequeue())
-print(queue)
-print(queue.peek())
+# queue=Queue()
+# print(queue.peek())
+# print(queue.isEmpty())
+# queue.enqueue(1)
+# queue.enqueue(2)
+# queue.enqueue(3)
+# print(queue.dequeue())
+# print(queue)
+# print(queue.peek())
