@@ -22,6 +22,14 @@ def inOrderTraversal(rootNode):
     inOrderTraversal(rootNode.leftChild)
     print(rootNode.data)
     inOrderTraversal(rootNode.rightChild)
+
+def postOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    postOrderTraversal(rootNode.leftChild)
+    postOrderTraversal(rootNode.rightChild)
+    print(rootNode.data)
+
 treeNode = TreeNode('Drinks')
 hot = TreeNode('Hot')
 cold = TreeNode('Cold')
@@ -30,3 +38,4 @@ treeNode.rightChild = cold
 
 preOrderTraversal(treeNode)
 inOrderTraversal(treeNode)
+postOrderTraversal(treeNode)
