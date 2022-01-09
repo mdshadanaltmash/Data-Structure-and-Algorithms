@@ -9,8 +9,16 @@ class TreeNode:
     def setRightChild(self, rightChild):
         self.rightChild = rightChild
 
+def preOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    print(rootNode.data)
+    preOrderTraversal(rootNode.leftChild)
+    preOrderTraversal(rootNode.rightChild)
 treeNode = TreeNode('Drinks')
 hot = TreeNode('Hot')
 cold = TreeNode('Cold')
 treeNode.leftChild = hot
 treeNode.rightChild = cold
+
+preOrderTraversal(treeNode)
