@@ -48,6 +48,20 @@ def levelOrderTraversal(rootNode):
             if root.value.rightChild is not None:
                 customQueue.enqueue(root.value.rightChild)
 
+def searchBT(rootNode, node):
+    if not rootNode:
+        return "BT is Empty"
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        root = customQueue.dequeue()
+        if root.value.data == node:
+            return "Found"
+        if root.value.leftChild is not None:
+            customQueue.enqueue(root.value.leftChild)
+        if root.value.rightChild is not None:
+            customQueue.enqueue(root.value.rightChild)
+    return "Not Found"
 
 treeNode = TreeNode('Drinks')
 hot = TreeNode('Hot')
@@ -67,4 +81,5 @@ cold.rightChild = coke
 # preOrderTraversal(treeNode)
 # inOrderTraversal(treeNode)
 # postOrderTraversal(treeNode)
-levelOrderTraversal(treeNode)
+#levelOrderTraversal(treeNode)
+print(searchBT(treeNode, 'Coke'))
