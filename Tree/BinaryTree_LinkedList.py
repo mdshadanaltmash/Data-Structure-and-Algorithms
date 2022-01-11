@@ -63,6 +63,28 @@ def searchBT(rootNode, node):
             customQueue.enqueue(root.value.rightChild)
     return "Not Found"
 
+def insertNode(rootNode, newNode):
+    if not rootNode:
+        rootNode = newNode
+    else:
+        customQueue = Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            else:
+                root.value.leftChild = newNode
+                print('Successfully Inserted')
+                return
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+            else:
+                root.value.rightChild = newNode
+                print('Successfully Inserted')
+                return
+
+
 treeNode = TreeNode('Drinks')
 hot = TreeNode('Hot')
 cold = TreeNode('Cold')
@@ -81,5 +103,6 @@ cold.rightChild = coke
 # preOrderTraversal(treeNode)
 # inOrderTraversal(treeNode)
 # postOrderTraversal(treeNode)
-#levelOrderTraversal(treeNode)
-print(searchBT(treeNode, 'Coke'))
+insertNode(treeNode, TreeNode('Masala Tea'))
+levelOrderTraversal(treeNode)
+#print(searchBT(treeNode, 'Coke'))
