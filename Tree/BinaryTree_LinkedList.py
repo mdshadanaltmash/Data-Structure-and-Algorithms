@@ -138,6 +138,14 @@ def deleteNode(rootNode, node):
         if root.value.rightChild is not None:
             customQueue.enqueue(root.value.rightChild)
     return("Node is not deleted or it is not present in BT")
+
+def deleteBT(rootNode):
+    if not rootNode:
+        return "BT is Not Present"
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return("BT has been Successfully Deleted")
         
 
 treeNode = TreeNode('Drinks')
@@ -164,3 +172,5 @@ insertNode(treeNode, TreeNode('Masala Tea'))
 print(deleteNode(treeNode, 'Cold'))
 levelOrderTraversal(treeNode)
 #print(searchBT(treeNode, 'Coke'))
+print(deleteBT(treeNode))
+levelOrderTraversal(treeNode)
