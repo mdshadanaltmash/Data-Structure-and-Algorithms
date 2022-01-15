@@ -121,6 +121,23 @@ def deleteDeepestNode(rootNode, dNode):
                 customQueue.enqueue(root.value.rightChild)
     print("Deepest Node could not be deleted")
 
+def deleteNode(rootNode, node):
+    if not rootNode:
+        return "BT is Empty"
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not (customQueue.isEmpty()):
+        root = customQueue.dequeue()
+        if root.value.data == node:
+            dNode = getDepeestNode(rootNode)
+            root.value.data = dNode.data
+            deleteDeepestNode(rootNode, dNode)
+            return("Node is Deleted from Binary Tree")
+        if root.value.leftChild is not None:
+            customQueue.enqueue(root.value.leftChild)
+        if root.value.rightChild is not None:
+            customQueue.enqueue(root.value.rightChild)
+    return("Node is not deleted or it is not present in BT")
         
 
 treeNode = TreeNode('Drinks')
@@ -142,6 +159,8 @@ cold.rightChild = coke
 # inOrderTraversal(treeNode)
 # postOrderTraversal(treeNode)
 # insertNode(treeNode, TreeNode('Masala Tea'))
-deleteDeepestNode(treeNode, getDepeestNode(treeNode))
+# deleteDeepestNode(treeNode, getDepeestNode(treeNode))
+levelOrderTraversal(treeNode)
+deleteNode(treeNode, 'Cold')
 levelOrderTraversal(treeNode)
 #print(searchBT(treeNode, 'Coke'))
