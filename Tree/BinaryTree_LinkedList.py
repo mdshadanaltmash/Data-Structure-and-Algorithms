@@ -14,6 +14,7 @@ class TreeNode:
         self.rightChild = rightChild
 
 def preOrderTraversal(rootNode):
+    #Root-> Left -> Right
     if not rootNode:
         return
     print(rootNode.data)
@@ -21,6 +22,7 @@ def preOrderTraversal(rootNode):
     preOrderTraversal(rootNode.rightChild)
 
 def inOrderTraversal(rootNode):
+    #Left -> Root -> Right
     if not rootNode:
         return
     inOrderTraversal(rootNode.leftChild)
@@ -28,6 +30,7 @@ def inOrderTraversal(rootNode):
     inOrderTraversal(rootNode.rightChild)
 
 def postOrderTraversal(rootNode):
+    # Left -> Right -> Root
     if not rootNode:
         return
     postOrderTraversal(rootNode.leftChild)
