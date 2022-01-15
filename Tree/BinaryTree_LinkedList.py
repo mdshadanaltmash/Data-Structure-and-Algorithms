@@ -84,6 +84,44 @@ def insertNode(rootNode, newNode):
                 print('Successfully Inserted')
                 return
 
+def getDepeestNode(rootNode):
+    if not rootNode:
+        return("BT is Empty")
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        root = customQueue.dequeue()
+        if root.value.leftChild is not None:
+            customQueue.enqueue(root.value.leftChild)
+        if root.value.rightChild is not None:
+            customQueue.enqueue(root.value.rightChild)
+    return (root.value)
+
+def deleteDeepestNode(rootNode, dNode):
+    if not rootNode:
+        return
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    while not(customQueue.isEmpty()):
+        root = customQueue.dequeue()
+        if root.value is dNode:
+            root.value = None
+            return
+        if root.value.leftChild:
+            if root.value.leftChild is dNode:
+                root.value.leftChild = None
+                return
+            else:
+                customQueue.enqueue(root.value.leftChild)
+        if root.value.rightChild:
+            if root.value.rightChild is dNode:
+                root.value.rightChild = None
+                return
+            else:
+                customQueue.enqueue(root.value.rightChild)
+    print("Deepest Node could not be deleted")
+
+        
 
 treeNode = TreeNode('Drinks')
 hot = TreeNode('Hot')
@@ -103,6 +141,7 @@ cold.rightChild = coke
 # preOrderTraversal(treeNode)
 # inOrderTraversal(treeNode)
 # postOrderTraversal(treeNode)
-insertNode(treeNode, TreeNode('Masala Tea'))
+# insertNode(treeNode, TreeNode('Masala Tea'))
+deleteDeepestNode(treeNode, getDepeestNode(treeNode))
 levelOrderTraversal(treeNode)
 #print(searchBT(treeNode, 'Coke'))
