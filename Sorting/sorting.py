@@ -48,6 +48,34 @@ def insertion_sort_with_binary_search(arr):
             arr.insert(mid,arr.pop(i))
     return(arr)
 
+def merge_sort(arr):
+    size = len(arr)
+    if size > 1:
+        middle_end = len(arr)//2
+        l = arr[:middle_end]
+        r = arr[middle_end:]
+        merge_sort(l)
+        merge_sort(r)
+        i = j = k = 0
+        l_size = len(l)
+        r_size = len(r)
+        while i<l_size and j<r_size:
+            if l[i] < r[j]:
+                arr[k] = l[i]
+                i+=1
+            else: 
+                arr[k] = r[j]
+                j+=1
+            k+=1
+        while i < l_size:
+            arr[k] = l[i]
+            k+=1
+            i+=1
+        while j < r_size:
+            arr[k] = r[j]
+            k+=1
+            j+=1
+
 def bucket_sort(arr_list):
     #does not work for 0 and negative number
     no_of_buckets = round(math.sqrt(len(arr_list)))
@@ -64,7 +92,7 @@ def bucket_sort(arr_list):
         total_buckets[bucket_no-1].append(j)
 
     #sorting Buckets
-    list_of_sorting = [bubble_sort, selection_sort, insertion_sort, insertion_sort_with_binary_search]
+    list_of_sorting = [merge_sort,bubble_sort, selection_sort, insertion_sort, insertion_sort_with_binary_search]
     for i in range(no_of_buckets):
         
         total_buckets[i] = random.choice(list_of_sorting)(total_buckets[i])
@@ -77,6 +105,12 @@ def bucket_sort(arr_list):
             k+=1
     return(arr_list)
 
-
-input_arr = [6,1,2,5,4,9,8,7,3,10]
-print(bucket_sort(input_arr))
+ 
+inp_arr = [11, 31, 7, 41, 101, 56, 77, 2]
+print("Input Array:\n")
+print(inp_arr)
+merge_sort(inp_arr)
+print("Sorted Array:\n")
+print(inp_arr)
+arr = [6,1,2,5,4,9,8,7,3,10]
+merge_sort1(arr)

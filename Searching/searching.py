@@ -21,6 +21,21 @@ def binary_search(arr, val) -> int:
     else:
         return -1
 
+def binary_search_recursion(arr, elt, left, right):
+    if left>right:
+            return False
+    else:
+        mid = (left+right)//2
+        if arr[mid]==elt:
+            return mid
+        elif arr[mid]< elt:
+            binary_search_recursion(arr,elt, mid+1, right)
+        else: # arr[mid]<elt:
+            binary_search_recursion(arr, elt, left, mid-1)
+
+def b_search(arr, elt):
+    a= binary_search_recursion(arr, elt, 0, len(arr)-1)
+    return (a)
 def leet_code(nums, target):
     start = 0
     end =len(nums)-1
@@ -39,8 +54,8 @@ def leet_code(nums, target):
         else:
             return mid
 
-array = [1,2,4,7,9,12,14,17,18]
-array=[1,3]
-print(linear_search(array,9))
-print(binary_search(array, 14))
-print(leet_code(array,0))
+data = [1,2,4,7,9,12,14,17,18]
+#array=[1,3]
+#print(linear_search(array,9))
+print(b_search(data, 12))
+#print(leet_code(array,0))
