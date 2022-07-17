@@ -51,7 +51,7 @@ def insertion_sort_with_binary_search(arr):
 def merge_sort(arr):
     size = len(arr)
     if size > 1:
-        middle_end = len(arr)//2
+        middle_end = size//2
         l = arr[:middle_end]
         r = arr[middle_end:]
         merge_sort(l)
@@ -75,6 +75,7 @@ def merge_sort(arr):
             arr[k] = r[j]
             k+=1
             j+=1
+    return arr
 
 def bucket_sort(arr_list):
     #does not work for 0 and negative number
@@ -112,5 +113,6 @@ print(inp_arr)
 merge_sort(inp_arr)
 print("Sorted Array:\n")
 print(inp_arr)
-arr = [6,1,2,5,4,9,8,7,3,10]
-merge_sort1(arr)
+#arr = [6,1,2,5,4,9,8,7,3,10]
+arr = [-2,3,-5]
+print(merge_sort(arr))

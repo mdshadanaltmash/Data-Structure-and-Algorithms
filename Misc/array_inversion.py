@@ -20,11 +20,11 @@ def merge_and_count_inv(arr, temp_arr, left, mid, right):
     
     while i <= mid and j <= right:
         if arr[i]<= arr[j]:
-            temp_arr[k] == arr[i]
+            temp_arr[k] = arr[i]
             k+=1
             i+=1
         else:
-            temp_arr[k] == arr[j]
+            temp_arr[k] = arr[j]
             k+=1
             j+=1
             c_inv += (mid-i+1)
@@ -38,11 +38,11 @@ def merge_and_count_inv(arr, temp_arr, left, mid, right):
         k+=1
         j+=1
 
-    for loop_var in range(left, right ):
+    for loop_var in range(left, right +1):
         arr[loop_var] = temp_arr[loop_var]
 
     return c_inv 
 
-arr = [1, 20, 6, 4, 5]
+arr = [4,5,3,5,1,2]
 
 print(array_inv(arr))
