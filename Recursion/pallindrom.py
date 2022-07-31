@@ -1,0 +1,23 @@
+def reverse(strng):
+    if len(strng)==0:
+        return ''
+    else:
+        return strng[-1]+reverse(strng[:-1])
+
+def isPalindrome_rev(strng):
+    rev = strng[-1]+reverse(strng[:-1])
+    return rev == strng
+
+
+def isPalindrome(strng):
+    if len(strng) == 0:
+        return True
+    if strng[0] != strng[len(strng)-1]:
+        return False
+    return isPalindrome(strng[1:-1])
+
+print(isPalindrome_rev('awesome')) # false
+print(isPalindrome('foobar')) # false
+print(isPalindrome('tacocat')) # true
+print(isPalindrome('amanaplanacanalpanama')) # true
+print(isPalindrome('amanaplanacanalpandemonium')) # false
