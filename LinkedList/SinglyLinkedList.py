@@ -146,38 +146,41 @@ class SingleLinkedList:
                 else:
                     print("Data is not present in the list")
         
-                
-        
-sLinkedList=SingleLinkedList()
+def print_linkedlist(head):
+    while head:
+        print(head.data, end ='-->')
+        head = head.next
+if __name__ == '__main__':
+    sLinkedList=SingleLinkedList()
 
-sLinkedList.print_likedList()
-sLinkedList.insertNode(1, 0)
-#sLinkedList.delByData(1)
-sLinkedList.print_likedList()
-sLinkedList.insertNode(3, 0)
-sLinkedList.insertNode(5, 1)
-print(sLinkedList.length_llist())
-sLinkedList.delByIndex(2)
+    sLinkedList.print_likedList()
+    sLinkedList.insertNode(1, 0)
+    #sLinkedList.delByData(1)
+    sLinkedList.print_likedList()
+    sLinkedList.insertNode(3, 0)
+    sLinkedList.insertNode(5, 1)
+    print(sLinkedList.length_llist())
+    sLinkedList.delByIndex(2)
 
-sLinkedList.print_likedList()
-print("\nLength of Linked list is ", sLinkedList.length_llist())
+    sLinkedList.print_likedList()
+    print("\nLength of Linked list is ", sLinkedList.length_llist())
 
-sLinkedList.insertNode(2, sLinkedList.length_llist())
-sLinkedList.print_likedList()
+    sLinkedList.insertNode(2, sLinkedList.length_llist())
+    sLinkedList.print_likedList()
 
-print("\nLength of Linked list is ", sLinkedList.length_llist())
-sLinkedList.insertNode(4, 1)
-sLinkedList.insert_at_beg(10)
-sLinkedList.insert_at_end(11)
-sLinkedList.delByIndex(3)
-sLinkedList.delByData(111)
-sLinkedList.print_likedList()
-print("Length of Linked list is ", sLinkedList.length_llist())
-print(sLinkedList.getIndexOfNode(10))
+    print("\nLength of Linked list is ", sLinkedList.length_llist())
+    sLinkedList.insertNode(4, 1)
+    sLinkedList.insert_at_beg(10)
+    sLinkedList.insert_at_end(11)
+    sLinkedList.delByIndex(3)
+    sLinkedList.delByData(111)
+    sLinkedList.print_likedList()
+    print("Length of Linked list is ", sLinkedList.length_llist())
+    print(sLinkedList.getIndexOfNode(10))
 
-a=[1,1,1,2,2,3,4,5,5,6]
-llist=SingleLinkedList()
-for i in a:
-    llist.insert_at_end(i)
+    a=[1,1,1,2,2,3,4,5,5,6]
+    llist=SingleLinkedList()
+    for i in a:
+        llist.insert_at_end(i)
 
-sLinkedList.print_likedList()
+    sLinkedList.print_likedList()
