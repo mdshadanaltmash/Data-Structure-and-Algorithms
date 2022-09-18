@@ -1,6 +1,4 @@
-from turtle import left, right
-
-
+from Queue.QueueUsingLinkedList import Queue
 class TreeNode:
     def __init__(self, data, left = None, right = None) -> None:
         self.data = data
@@ -43,6 +41,15 @@ def inOrderTraversal_list(rootNode, nodes=[]):
     nodes.append(rootNode.data)
     inOrderTraversal_list(rootNode.right, nodes)
     return (nodes)
+
+def postOrderTraversal_list(rootNode, nodes=[]):
+    if rootNode is None:
+        return
+    postOrderTraversal_list(rootNode.left, nodes)
+    postOrderTraversal_list(rootNode.right, nodes)
+    nodes.append(rootNode.data)
+    return (nodes)
+
 newBst = TreeNode(None)
 print(insertNode(newBst, 70))
 print(insertNode(newBst, 60))
@@ -52,6 +59,7 @@ print(insertNode(newBst, 10))
 print(insertNode(newBst, 50))
 print(insertNode(newBst, 40))
 print(insertNode(newBst, 100))
-preOrderTraversal(newBst)
+# preOrderTraversal(newBst)
 print(preOrderTraversal_list(newBst))
 print(inOrderTraversal_list(newBst))
+print(postOrderTraversal_list(newBst))
