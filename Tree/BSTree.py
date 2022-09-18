@@ -1,3 +1,6 @@
+import sys
+print(sys.path)
+sys.path.append('/Users/mdshadanaltmash/Algorithms')
 from Queue.QueueUsingLinkedList import Queue
 class TreeNode:
     def __init__(self, data, left = None, right = None) -> None:
@@ -50,6 +53,20 @@ def postOrderTraversal_list(rootNode, nodes=[]):
     nodes.append(rootNode.data)
     return (nodes)
 
+def levelOrderTraversal_list(rootNode):
+    if rootNode is None:
+        return 
+    customQueue = Queue()
+    customQueue.enqueue(rootNode)
+    nodes = list()
+    while not(customQueue.isEmpty()):
+        root = customQueue.dequeue()
+        nodes.append(root.value.data)
+        if root.value.left is not None:
+            customQueue.enqueue(root.value.left)
+        if root.value.right is not None:
+            customQueue.enqueue(root.value.right)
+    return nodes
 newBst = TreeNode(None)
 print(insertNode(newBst, 70))
 print(insertNode(newBst, 60))
@@ -63,3 +80,14 @@ print(insertNode(newBst, 100))
 print(preOrderTraversal_list(newBst))
 print(inOrderTraversal_list(newBst))
 print(postOrderTraversal_list(newBst))
+print(levelOrderTraversal_list(newBst))
+
+
+"""
+                    70
+                60      80
+            10              90
+                50              100
+            40          
+
+"""
