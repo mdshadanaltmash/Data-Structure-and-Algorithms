@@ -79,6 +79,33 @@ def searchNode( rootNode, nodeValue):
         if rootNode.right is not None:
             searchNode(rootNode.right, nodeValue)
         return ('Not Found')
+
+def minimunNode(rootNode):
+    curr = rootNode
+    while rootNode.left is not None:
+        curr = curr.left
+    return curr
+
+def deleteNode(rootNode, nodeValue):
+    if rootNode is None:
+        return rootNode
+    if nodeValue<rootNode.data:
+        rootNode.left = deleteNode(rootNode.left, nodeValue)
+    elif nodeValue>rootNode.data:
+        rootNode.right = deleteNode(rootNode.right, nodeValue)
+    else:
+        if rootNode.left is None:
+            temp = rootNode.right
+            rootNode = None
+            return temp
+        if rootNode.right is None:
+            temp = rootNode.left
+            rootNode = None
+            return temp
+        temp  = minimunNode(rootNode.right)
+        rootNode.data = temp.data
+        rootNode.right = deleteNode(rootNode.right, temp.data)
+    return rootNode
 newBst = TreeNode(None)
 print(insertNode(newBst, 70))
 print(insertNode(newBst, 60))
@@ -94,7 +121,8 @@ print(inOrderTraversal_list(newBst))
 print(postOrderTraversal_list(newBst))
 print(levelOrderTraversal_list(newBst))
 print(searchNode(newBst, 70))
-
+deleteNode(newBst, 40)
+print(levelOrderTraversal_list(newBst))
 
 """
                     70
