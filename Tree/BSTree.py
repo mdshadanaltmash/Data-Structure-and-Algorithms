@@ -67,6 +67,20 @@ def levelOrderTraversal_list(rootNode):
         if root.value.right is not None:
             customQueue.enqueue(root.value.right)
     return nodes
+
+def searchNode( rootNode, nodeValue):
+    if rootNode.data == nodeValue:
+        print("Value is Found")
+    elif rootNode.data>nodeValue:
+        if rootNode.left.data == nodeValue:
+            print("Value is Found")
+        else:
+            searchNode(rootNode.left, nodeValue)
+    else:
+        if rootNode.right.data == nodeValue:
+            print("Value is Found")
+        else:
+            searchNode(rootNode.right, nodeValue)
 newBst = TreeNode(None)
 print(insertNode(newBst, 70))
 print(insertNode(newBst, 60))
@@ -81,6 +95,7 @@ print(preOrderTraversal_list(newBst))
 print(inOrderTraversal_list(newBst))
 print(postOrderTraversal_list(newBst))
 print(levelOrderTraversal_list(newBst))
+searchNode(newBst, 700)
 
 
 """
