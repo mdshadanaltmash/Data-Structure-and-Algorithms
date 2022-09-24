@@ -106,6 +106,12 @@ def deleteNode(rootNode, nodeValue):
         rootNode.data = temp.data
         rootNode.right = deleteNode(rootNode.right, temp.data)
     return rootNode
+
+def deleteBST(rootNode):
+    rootNode.data = None
+    rootNode.left = None
+    rootNode.right = None
+    return ("BST has been deleted succesfully")
 newBst = TreeNode(None)
 print(insertNode(newBst, 70))
 print(insertNode(newBst, 60))
@@ -122,6 +128,8 @@ print(postOrderTraversal_list(newBst))
 print(levelOrderTraversal_list(newBst))
 print(searchNode(newBst, 70))
 deleteNode(newBst, 40)
+print(levelOrderTraversal_list(newBst))
+print(deleteBST(newBst))
 print(levelOrderTraversal_list(newBst))
 
 """
