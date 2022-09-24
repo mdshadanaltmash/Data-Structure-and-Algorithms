@@ -70,17 +70,15 @@ def levelOrderTraversal_list(rootNode):
 
 def searchNode( rootNode, nodeValue):
     if rootNode.data == nodeValue:
-        print("Value is Found")
+        return ("Value is Found")
     elif rootNode.data>nodeValue:
-        if rootNode.left.data == nodeValue:
-            print("Value is Found")
-        else:
+        if rootNode.left is not None:
             searchNode(rootNode.left, nodeValue)
+        return ('Not Found')
     else:
-        if rootNode.right.data == nodeValue:
-            print("Value is Found")
-        else:
+        if rootNode.right is not None:
             searchNode(rootNode.right, nodeValue)
+        return ('Not Found')
 newBst = TreeNode(None)
 print(insertNode(newBst, 70))
 print(insertNode(newBst, 60))
@@ -95,7 +93,7 @@ print(preOrderTraversal_list(newBst))
 print(inOrderTraversal_list(newBst))
 print(postOrderTraversal_list(newBst))
 print(levelOrderTraversal_list(newBst))
-searchNode(newBst, 700)
+print(searchNode(newBst, 70))
 
 
 """
