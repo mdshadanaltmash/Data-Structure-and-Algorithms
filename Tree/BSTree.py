@@ -7,7 +7,7 @@ class TreeNode:
         self.data = data
         self.left = left
         self.right = right
-    
+
 def insertNode( rootNode, newNode):
     if rootNode.data is None:
         rootNode.data = newNode
@@ -55,7 +55,7 @@ def postOrderTraversal_list(rootNode, nodes=[]):
 
 def levelOrderTraversal_list(rootNode):
     if rootNode is None:
-        return 
+        return
     customQueue = Queue()
     customQueue.enqueue(rootNode)
     nodes = list()
