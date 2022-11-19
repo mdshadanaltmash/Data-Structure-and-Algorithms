@@ -1,5 +1,18 @@
+class TreeComparator:
+    def compare(self, node1,node2):
+        """ check the base case (node1 and node 2 may be the leaf node)
+            node1 may be None or node2 may be None """
+        if not node1 or not node2:
+            return node1 == node2
+
+        #compare the data
+        if node1.data is not node2.data:
+            return False
+
+        #check all left and right subtrees (children) recursively
+        return self.compare(node1.left_node, node2.left_node) and self.compare(node1.right_node, node2.right_node)
 class Node:
-    def __init__(self, data, parent=None):
+    def __init__(self, data, parent):
         self.data = data
         self.left_node = None
         self.right_node = None
@@ -15,7 +28,7 @@ class BinarySearchTree:
     def insert(self, data):
         # this is the first node in the BST
         if not self.root:
-            self.root = Node(data)
+            self.root = Node(data , None)
         # if root is not empty i.e. BST is not empty
         else:
             self.insert_node(data, self.root)
@@ -161,8 +174,23 @@ if __name__ == '__main__':
     bst.traverse()
 
 
+    bst1 = BinarySearchTree()
+    bst2 = BinarySearchTree()
+    bst1.insert(-5)
+    bst1.insert(44)
+    bst1.insert(22)
+    bst1.insert(-12)
+    bst1.insert(19)
+    bst1.insert(12)
 
-
+    bst2.insert(-5)
+    bst2.insert(44)
+    bst2.insert(22)
+    bst2.insert(-12)
+    bst2.insert(19)
+    bst2.insert(12)
+    comparator = TreeComparator()
+    print(comparator.compare(bst1.root, bst2.root))
 
 
 
