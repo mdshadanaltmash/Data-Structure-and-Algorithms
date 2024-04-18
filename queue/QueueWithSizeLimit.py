@@ -7,7 +7,7 @@ class Queue:
 
     def __str__(self) -> str:
         if self.isEmpty():
-            return("Queue is Empty!")
+            return("queue is Empty!")
         else:
             q=[str(x) for x in self.items]
             return ' '.join(q)
@@ -26,13 +26,13 @@ class Queue:
             return False
     def peek(self):
         if self.isEmpty() == True:
-            return "Queue is Empty"
+            return "queue is Empty"
         else:
             return self.items[self.start]
 
     def enqueue(self,value):
         if self.isFull():
-            print ("Queue is full, Cannot enter new element")
+            print ("queue is full, Cannot enter new element")
         else:
             if self.top+1==self.maxSize:
                 self.top=0
@@ -41,11 +41,11 @@ class Queue:
                 if self.start==-1:
                     self.start+=1 
             self.items[self.top]=value
-            print ("Element is inserted at the top of Queue!!")   
+            print ("Element is inserted at the top of queue!!")
 
     def dequeue(self):
         if self.isEmpty()==True:
-            return("Queue is empty!!")
+            return("queue is empty!!")
         else:
             firstElem= self.items[self.start]
             start=self.start

@@ -1,6 +1,6 @@
 import sys
-sys.path.append('/Users/mdshadanaltmash/Algorithms/Queue')
-from Queue.QueueUsingLinkedList import Queue
+sys.path.append('/queue')
+from queue.QueueUsingLinkedList import Queue
 
 class TreeNode:
     def __init__(self,data) -> None:

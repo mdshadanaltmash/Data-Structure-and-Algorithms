@@ -13,7 +13,7 @@ class Queue:
             return False
     def peek(self):
         if self.isEmpty() == True:
-            return "Queue is Empty"
+            return "queue is Empty"
         else:
             return self.items[0]
     
@@ -23,7 +23,7 @@ class Queue:
     
     def dequeue(self):
         if self.isEmpty() == True:
-            return "Queue is Empty"
+            return "queue is Empty"
         else:
             return self.items.pop(0)
     

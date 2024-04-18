@@ -50,6 +50,7 @@ class BinarySearchTree:
             else:
                 # when there is no right child so we create one
                 node.right_node = Node(data, node)
+
     def remove(self, data):
         if self.root:
             self.remove_node(data, self.root)
@@ -118,7 +119,6 @@ class BinarySearchTree:
                 node.data = temp
 
                 self.remove_node(data, predecessor)
-
 
     def get_predecessor(self, node):
         if node .right_node:

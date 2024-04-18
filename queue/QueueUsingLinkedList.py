@@ -42,13 +42,13 @@ class Queue:
 
     def peek(self):
         if self.isEmpty():
-            return "Queue is Empty!!"
+            return "queue is Empty!!"
         else:
             return self.linkedlist.head
 
     def dequeue(self):
         if self.isEmpty():
-            return "Queue is Empty!!"
+            return "queue is Empty!!"
         else:
             tempNode=self.linkedlist.head
             if self.linkedlist.head==self.linkedlist.tail:
@@ -62,7 +62,7 @@ class Queue:
         self.linkedlist.head=None
         self.linkedlist.tail=None
 
-# queue=Queue()
+# queue=queue()
 # print(queue.peek())
 # print(queue.isEmpty())
 # queue.enqueue(1)
