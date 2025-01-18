@@ -58,9 +58,34 @@ def min_cost_driver_memo(cost):
     return min(min_cost_memo(n-1, cost, memo), min_cost_memo(n-2, cost, memo))
 
 
+def min_cost_iter(cost):
+    n = len(cost)
+    dp = [-1] * n
+    if n <= 1:
+        return cost[n]
+    dp[0] = cost[0]
+    dp[1] = cost[1]
+    
+    for i in range(2, n):
+        dp[i] = cost[i] + min(dp[i-1], dp[i-2])
+    
+    return min(dp[-1], dp[-2])
 
+def min_cost_iter_optimized(cost):
+    n = len(cost)
+    if n <= 1:
+        return cost[n]
+    first = cost[0]
+    second = cost[1]
 
+    for i in range(2, n):
+        curr = cost[i] + min(first, second)
+        first = second
+        second = curr
+    return min(first, second)
 
 cost = [16, 19, 10, 12, 18]
 print(min_cost_driver(cost))
 print(min_cost_driver_memo(cost))
+print(min_cost_iter(cost))
+print(min_cost_iter_optimized(cost))
