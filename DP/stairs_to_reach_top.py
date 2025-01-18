@@ -67,10 +67,3 @@ memo = [-1] * (n+1)
 print(solution(n))
 print(solution_dp_memo(n, memo))
 print(solution_dp_iter(n))
-
-
-
-
-
-
-I LOVE YOU
