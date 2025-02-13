@@ -24,9 +24,20 @@
 # 	I/P: [{'a': 123, 'b': 1234}, {'a': 3222, 'b': 1234}, {'a': 123, 'b': 1234}]
 # 	O/P: [{'a': 3222, 'b': 1234}, {'a': 123, 'b': 1234}]
 
-# ip = [{'a': 123, 'b': 1234}, {'a': 3222, 'b': 1234}, {'a': 123, 'b': 1234}]
+ip = [{'a': 123, 'b': 1234}, {'a': 3222, 'b': 1234}, {'a': 123, 'b': 1234}]
 #
-# # print(set(ip))
+# print(set(ip))
+
+# Use a set of frozensets to remove duplicates
+# unique_ip = list(map(dict, {frozenset(item.items()): item for item in ip}.values()))
+# a = [item.items() for item in ip]
+# print(type(a[0]), a[0])
+# print(a)
+# print([item for item in ip])
+# unique_ip = {frozenset(item.items()): item for item in ip}
+#
+# print(type(unique_ip))
+
 #
 # # op = [item for item in ip if item not in op]
 # op = []
