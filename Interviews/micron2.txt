@@ -1,0 +1,22 @@
+every 10 min 1 file 1 million avg records (OLTP trans)
+- no info of credit or debit in case of 3rd party, but data should be available in data forensic
+- in case of individual scam , 3 trans will be showed to the user
+
+
+s3 ->
+
+
+
+
+
+excel files, multiple teams(4 teams),
+upload, validate, convert to CSV, load to relational database(write heavy)
+
+
+zip/enc -> decrypt
+on-prem -> s3 -> kinesis -> lambda/emr -> stepfunction ->
+
+
+N/w Filer
+Orchestration
+Data Governance
