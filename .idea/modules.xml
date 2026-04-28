@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Data-Structure-and-Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Data-Structure-and-Algorithms.iml" />
+      <module fileurl="file://$USER_HOME$/FlipkartSellar/.idea/FlipkartSellar.iml" filepath="$USER_HOME$/FlipkartSellar/.idea/FlipkartSellar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AI/LangChain-Learning/.idea/LangChain-Learning.iml" filepath="$PROJECT_DIR$/../AI/LangChain-Learning/.idea/LangChain-Learning.iml" />
+    </modules>
+  </component>
+</project>
